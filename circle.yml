@@ -10,14 +10,14 @@ machine:
 dependencies:
   pre:
     - make setup
+  override:
     - make deps
     - mkdir -p ~/.gvm/pkgsets/go${GO_VERSION}/global/src/github.com/${CIRCLE_PROJECT_USERNAME}
     - ln -s ~/${CIRCLE_PROJECT_REPONAME} ~/.gvm/pkgsets/go${GO_VERSION}/global/src/github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}
+
+test:
   override:
     - make lint
     - make build
     - ./bin/goSample
-
-test:
-  override:
-      - make test
+    - make test
