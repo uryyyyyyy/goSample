@@ -1,0 +1,19 @@
+machine:
+  environment:
+    GO_VERSION: "1.8"
+  post:
+    - bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+    - source ${HOME}/.gvm/scripts/gvm
+    - gvm install go${GO_VERSION} -B
+    - gvm use go${GO_VERSION}
+
+dependencies:
+  pre:
+    - make setup
+  override:
+    - make deps
+    - make build
+
+test:
+  override:
+      - make test
