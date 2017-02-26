@@ -10,10 +10,10 @@ machine:
 dependencies:
   pre:
     - make setup
-  override:
     - make deps
+  override:
     - make build
-    - ./goSample
+    - ./bin/goSample
 
 test:
   override:

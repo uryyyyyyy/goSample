@@ -8,7 +8,11 @@ deps:
 	glide install
 
 build:
-	go build
+	go build -v -o ./bin/goSample ./src/main.go
 
 test:
 	echo "test"
+
+fmt:
+	go fmt ./src/...
+
