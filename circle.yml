@@ -11,8 +11,8 @@ dependencies:
   pre:
     - make setup
     - make deps
-    - mkdir -p ~/.gvm/pkgsets/go1.8/global/src/github.com/${CIRCLE_PROJECT_USERNAME}
-    - ln -s ~/${CIRCLE_PROJECT_REPONAME} ~/.gvm/pkgsets/go1.8/global/src/github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}
+    - mkdir -p ~/.gvm/pkgsets/go${GO_VERSION}/global/src/github.com/${CIRCLE_PROJECT_USERNAME}
+    - ln -s ~/${CIRCLE_PROJECT_REPONAME} ~/.gvm/pkgsets/go${GO_VERSION}/global/src/github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}
   override:
     - make lint
     - make build
