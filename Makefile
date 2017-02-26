@@ -10,14 +10,13 @@ deps:
 	glide install
 
 build:
-	go build -v -o ./bin/goSample ./src/main.go
+	go build -v -o ./bin/goSample ./main.go
 
 test:
-	echo "test"
+	glide novendor | xargs go test
 
 lint:
-	go fmt ./src/...
-	go vet ./src/...
-	golint -min_confidence=0.1 ./src/...
-
+	glide novendor | xargs go fmt
+	glide novendor | xargs go vet
+	glide novendor | xargs golint -min_confidence=0.8
 

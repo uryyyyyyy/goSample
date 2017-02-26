@@ -12,7 +12,7 @@ dependencies:
     - make setup
     - make deps
   override:
-    - make fmt
+    - make lint
     - make build
     - ./bin/goSample
 
