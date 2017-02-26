@@ -1,6 +1,7 @@
 machine:
   environment:
     GO_VERSION: "1.8"
+    GOPATH: "~/.gvm/pkgsets/go${GO_VERSION}/global"
   post:
     - bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
     - source ~/.gvm/scripts/gvm
@@ -10,14 +11,13 @@ machine:
 dependencies:
   pre:
     - make setup
+  override:
     - make deps
-    - mkdir -p ~/.gvm/pkgsets/go${GO_VERSION}/global/src/github.com/${CIRCLE_PROJECT_USERNAME}
-    - ln -s ~/${CIRCLE_PROJECT_REPONAME} ~/.gvm/pkgsets/go${GO_VERSION}/global/src/github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}
+
+test:
   override:
     - make lint
     - make build
     - ./bin/goSample
+    - make test
 
-test:
-  override:
-      - make test
