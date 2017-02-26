@@ -9,11 +9,11 @@ machine:
 
 dependencies:
   pre:
-    - echo $GOPATH
     - make setup
   override:
     - make deps
     - make build
+    - ./goSample
 
 test:
   override:
