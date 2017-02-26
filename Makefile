@@ -2,7 +2,9 @@
 
 setup:
 	go get github.com/Masterminds/glide
-	go get github.com/golang/lint
+	go get github.com/golang/lint/golint
+	go get golang.org/x/tools/cmd/goimports
+
 
 deps:
 	glide install
@@ -13,6 +15,9 @@ build:
 test:
 	echo "test"
 
-fmt:
+lint:
 	go fmt ./src/...
+	go vet ./src/...
+	golint -min_confidence=0.1 ./src/...
+
 
