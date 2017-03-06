@@ -12,6 +12,12 @@ deps:
 build:
 	go build -v -o ./bin/goSample ./main.go
 
+run:
+	go run ./main.go
+
+run_build:
+	./bin/goSample
+
 test:
 	glide novendor | xargs go test
 
