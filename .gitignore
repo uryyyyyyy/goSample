@@ -1,3 +1,4 @@
 bin/goSample
 vendor/
 .idea/
+application.log
