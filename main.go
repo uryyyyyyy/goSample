@@ -7,14 +7,20 @@ import (
 	"os"
 	"io"
 	"strconv"
+	"strings"
 )
 
 const port int = 9090
 const logFile string = "./application.log"
 
 func sayhelloName(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
 	log.Println("path", r.URL.Path)
 	log.Println("scheme", r.URL.Scheme)
+	for k, v := range r.Form {
+		fmt.Println("key:", k)
+		fmt.Println("val:", strings.Join(v, ", "))
+	}
 	fmt.Fprintf(w, "Hello world!")
 }
 
