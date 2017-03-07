@@ -2,14 +2,15 @@ package main
 
 import (
 	"fmt"
-	"github.com/uryyyyyyy/goSample/calc"
+	"net/http"
 	"github.com/golang/glog"
 )
 
-func main() {
-	var str = "world"
-	fmt.Printf("hello, %s\n", str)
-	var a int = calc.Sum(2, 7)
-	glog.Info("Prepare to repel boarders")
-	fmt.Printf("sum: %d\n", a)
+func init() {
+	http.HandleFunc("/hello", handler)
+}
+
+func handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "Hello, world!")
+	glog.Fatal("Hello, world! log")
 }
