@@ -1,6 +1,8 @@
-hash: a29b1a3935c3ed98c522eae3e29783a1943bc23369b53f898b2fbe62c5143b79
-updated: 2017-02-27T00:43:13.480436093+09:00
+hash: 143a70d6b1684ca91f24e39aebb9be3e5e0c276ee03b67422c4661f89842eb8d
+updated: 2017-03-07T23:52:09.473215212+09:00
 imports:
+- name: github.com/ChimeraCoder/gojson
+  version: 6039f74e19c1090f88a75f74700b72e539717a22
 - name: github.com/golang/glog
   version: 23def4e6c14b4da8ac2ed8007337bc5eb5007998
 testImports: []

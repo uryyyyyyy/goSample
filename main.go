@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"github.com/golang/glog"
+	"github.com/franela/goreq"
 )
 
 func init() {
@@ -12,5 +12,6 @@ func init() {
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "Hello, world!")
-	glog.Fatal("Hello, world! log")
+	res, _ := goreq.Request{ Uri: "http://www.google.com" }.Do()
+	fmt.Fprint(w, "Hello, world!" + res.Status)
 }
