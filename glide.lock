@@ -1,6 +1,8 @@
-hash: a29b1a3935c3ed98c522eae3e29783a1943bc23369b53f898b2fbe62c5143b79
-updated: 2017-02-27T00:43:13.480436093+09:00
+hash: 3ec3365e281b4004f74f94d94e86c8c07349b1a456595928af8b59886b2db478
+updated: 2017-03-08T00:54:45.967662794+09:00
 imports:
-- name: github.com/golang/glog
-  version: 23def4e6c14b4da8ac2ed8007337bc5eb5007998
+- name: cloud.google.com/go
+  version: a60f1cde6df9c4cc674baf028d3936ad4df12e54
+  subpackages:
+  - pubsub
 testImports: []
