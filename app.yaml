@@ -1,5 +1,5 @@
 application: gaesample-160801
-version: 1
+version: 2
 runtime: go
 nobuild_files: vendor/ # should not include vendor folder
 api_version: go1
